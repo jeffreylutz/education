@@ -26,12 +26,12 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = mean(X);
+sigma = std(X);
 
+theta = ones(length(X),1);
 
-
-
-
-
+X_norm = (X .- (theta * mu)) ./ (theta * sigma);
 
 
 % ============================================================
