@@ -16,12 +16,14 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
+    % hypothesis = theta' * X
+    currentTheta = theta;
+    nPlus1 = length(theta);
+    hyp = theta' * X'; % NOTE:  Need to put X into the correct form
 
-
-
-
-
-
+    for i=1:nPlus1
+        theta(i) = currentTheta(i) - (alpha/m) * (hyp - y') * X(:,i);
+    end
 
     % ============================================================
 
