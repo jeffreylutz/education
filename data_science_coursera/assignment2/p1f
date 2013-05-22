@@ -1,0 +1,8 @@
+select count(a.docid)  
+from frequency as a
+INNER JOIN frequency as b
+ON a.docid = b.docid
+where a.term='transactions' AND b.term='world'
+;
+
+-- 925_txt_trade

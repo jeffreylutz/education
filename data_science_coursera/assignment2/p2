@@ -1,0 +1,5 @@
+select sum(a.value*b.value) 
+from A as a, B as b
+where a.col_num = b.row_num
+AND a.row_num = 2
+AND b.col_num = 3;

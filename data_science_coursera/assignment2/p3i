@@ -1,0 +1,30 @@
+CREATE TEMP VIEW IF NOT EXISTS keywordy AS
+SELECT * FROM frequency
+UNION
+SELECT 'q' as docid, 'washington' as term, 1 as count
+UNION
+SELECT 'q' as docid, 'taxes' as term, 1 as count
+UNION
+SELECT 'q' as docid, 'treasury' as term, 1 as count;
+
+--SELECT * from keywordy;
+--SELECT sum(a.count*b.count) from keywordy as a, keywordy as b
+--where a.term = b.term
+--AND a.docid='q';
+select docid, term, sum(count) as s from keywordy 
+where term='washington' 
+OR term='taxes'
+OR term='treasury'
+group by docid
+order by s;
+
+--select sum(a.count*b.count) from frequency as a, frequency as b
+--where a.term = b.term
+--AND a.docid='10080_txt_crude'
+--AND b.docid='17035_txt_earn';
+
+--select sum(a.value*b.value) 
+--from frequency as a, frequency as b
+--where a.col_num = b.row_num
+--AND a.row_num = 2
+--AND b.col_num = 3;

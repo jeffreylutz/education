@@ -1,0 +1,14 @@
+--select sum(cnt) from (select count(docid) as cnt from frequency 
+--group by docid 
+--having count(term) > 300);
+select count(*) from (
+--select sum(count) as cnt from frequency 
+select sum(count) as cnt from frequency 
+group by docid 
+having sum(count) > 300
+)
+;
+
+--select sum(count) from frequency 
+--where docid = '960_txt_acq'; 
+
