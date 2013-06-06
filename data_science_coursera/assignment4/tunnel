@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh -L 9100:localhost:9100 -L 9101:localhost:9101 -i jeffkeypair.pem hadoop@ec2-174-129-143-129.compute-1.amazonaws.com
+

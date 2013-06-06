@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export host=ec2-23-23-42-76
+
+ssh -o "ServerAliveInterval 10" -i jeffkeypair.pem hadoop@${host}.compute-1.amazonaws.com
+
